@@ -1,9 +1,13 @@
 const nodemon = require("nodemon");
 const fs = require("fs");
+const ejs = require("ejs");
 
-const colors = require("colors/safe");
 const express = require("express");
 const app = express();
+
+app.set("view engine", "ejs");
+app.set("views", "templates");
+app.use(express.static("public"));
 
 app.use((req, res, next) => {
   console.log("Наше проміжне ПЗ");
@@ -11,11 +15,18 @@ app.use((req, res, next) => {
 });
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.render("index", {
+    name: "Alex",
+    id: 4,
+  });
 });
 
 app.get("/contact", (req, res) => {
-  res.send("<h1>Contact page</h1>");
+  res.render("contacts");
+});
+
+app.get("/about", (req, res) => {
+  res.render("about");
 });
 
 app.get("/contact/:id", (req, res) => {

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <title>Social Media</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li class="menu"><a class="btn" href="/">Home</a></li>
+        <li class="menu"><a class="btn" href="/about">About</a></li>
+        <li class="menu"><a class="btn" href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <h1>Social Media</h1>
+
+    <ul>
+      <li><a href="https://github.com">Github</a></li>
+      <li><a href="/https://twitter.com">X</a></li>
+      <li><a href="/https://facebook.com">Facebook</a></li>
+    </ul>
+    <p>Name: <b><%= name %></b></p>
+    <p>ID: <b><%= id %></b></p>
+
+    <form action="/social" method="post">
+      <input type="text" name="name" placeholder="Name" />
+      <input type="text" name="email" placeholder="Email" />
+      <input type="submit" value="Send" />
+    </form>
+    <img class="img" src="https://picsum.photos/id/237/200" alt="alex" />
+
+    <script>
+      const name = document.querySelector('[name="name"]');
+      const email = document.querySelector('[name="email"]');
+      const form = document.querySelector('form');
+      form.addEventListener('submit', event => {
+        event.preventDefault();
+        console.log(name.value, email.value);
+      });
+    </script>
+    <script>
+      const btn = document.querySelector('.btn');
+      btn.addEventListener('click', event => {
+        console.log(event.target);
+      });
+    </script>
+  </body>
+</html>
