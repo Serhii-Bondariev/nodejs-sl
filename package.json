@@ -1,7 +1,6 @@
 {
   "name": "nodejs-sl",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "dependencies": {
     "colors": "^1.4.0",
@@ -13,5 +12,9 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
 }
